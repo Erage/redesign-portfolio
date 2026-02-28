@@ -17,26 +17,31 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        # Crucial: This tells the runner your code is in the sub-folder
-        working-directory: ./redesign-protfolio 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: 'npm'
+          # Points exactly to the lockfile in your sub-folder
+          cache-dependency-path: 'redesign-protfolio/package-lock.json'
 
       - name: Install dependencies
-        run: npm install
+        # Runs the command directly inside the project folder
+        run: cd redesign-protfolio && npm install
 
       - name: Build with Next.js
-        run: npx next build
+        # Builds the static site inside the project folder
+        run: cd redesign-protfolio && npx next build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Fix: Path to the static 'out' folder inside your sub-directory
-          path: ./redesign-protfolio/out
+          # Targets the 'out' folder created by the build step
+          path: redesign-protfolio/out
 
   deploy:
     environment:

@@ -6,7 +6,7 @@ export default function Home() {
     <main className="bg-[#1a1a1a] min-h-screen text-white px-6 pt-32 pb-20">
       <div className="max-w-5xl mx-auto flex flex-col items-center text-center">
         
-        {/* 1. The "Availability" Badge */}
+        {/* Availability Badge */}
         <motion.div 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -21,7 +21,7 @@ export default function Home() {
           </span>
         </motion.div>
 
-        {/* 2. The High-Contrast Hero Header */}
+        {/* Hero Header */}
         <motion.section 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -31,12 +31,11 @@ export default function Home() {
             Hi, I&apos;m <span className="text-[#f0a25e]">Your Name</span>
           </h1>
           
-          {/* Use font-mono for the subheadline to match Palak's site */}
           <p className="font-mono text-lg md:text-xl text-gray-400 max-w-3xl leading-relaxed mb-12">
-            Platform Architect <span className="text-gray-600">|</span> Building Intelligent Systems with <span className="text-white">GenAI & Cloud</span>
+            Platform Architect <span className="text-gray-600">|</span> 10+ Years DevOps Excellence <span className="text-gray-600">|</span> Specializing in <span className="text-white">AI Agents & Cloud</span>
           </p>
 
-          {/* 3. Action Buttons */}
+          {/* Corrected Buttons with valid string constants */}
           <div className="flex flex-wrap justify-center gap-4">
             <button className="bg-[#f0a25e] hover:bg-[#e0924e] text-black font-mono font-bold px-8 py-4 rounded-xl flex items-center gap-2 transition-all">
               View Projects <span>→</span>
@@ -44,4 +43,16 @@ export default function Home() {
             <button className="border border-blue-500/50 text-blue-400 font-mono font-bold px-8 py-4 rounded-xl hover:bg-blue-500/10 transition-all">
               Contact Me
             </button>
-            <button className="border border-gray-700 text-gray-300 font-mono
+            <button className="border border-gray-700 text-gray-300 font-mono font-bold px-8 py-4 rounded-xl hover:bg-gray-800 transition-all flex items-center gap-2">
+              <span>↓</span> Resume
+            </button>
+          </div>
+
+          <div className="mt-12 flex items-center justify-center gap-2 text-gray-500 font-mono text-sm">
+            <span>📍</span> Delhi, India
+          </div>
+        </motion.section>
+      </div>
+    </main>
+  );
+}

@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        # IMPORTANT: This tells GitHub to run commands inside your sub-folder
+        # Crucial: This tells the runner your code is in the sub-folder
         working-directory: ./redesign-protfolio 
     steps:
       - name: Checkout
@@ -30,10 +30,8 @@ jobs:
         with:
           node-version: "20"
           cache: 'npm'
+          # Fix: Points to the lockfile inside your sub-folder
           cache-dependency-path: './redesign-protfolio/package-lock.json'
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
 
       - name: Install dependencies
         run: npm install
@@ -44,7 +42,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Points to the 'out' folder created inside your sub-directory
+          # Fix: Path to the static 'out' folder inside your sub-directory
           path: ./redesign-protfolio/out
 
   deploy:

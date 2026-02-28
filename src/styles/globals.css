@@ -8,12 +8,12 @@
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: white;
+  color: black;
   -webkit-font-smoothing: antialiased;
 }
 
-/* Elegant high-contrast headings */
-.display-text {
-  @apply text-[10vw] md:text-[7vw] font-black tracking-tighter leading-[0.8] mb-12;
+/* Recreates the Palak Desai "Display" typography */
+.heading-display {
+  @apply text-[12vw] md:text-[9vw] font-black tracking-tighter leading-[0.8] mb-12;
 }

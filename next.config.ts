@@ -1,8 +1,10 @@
-// next.config.ts
+/** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export', // This creates the "out" folder for GitHub Pages
+  output: 'export',
+  basePath: '/redesign-portfolio', // MUST match your repo name
   images: {
-    unoptimized: true, // Required for static export
+    unoptimized: true,
   },
 };
+
 export default nextConfig;

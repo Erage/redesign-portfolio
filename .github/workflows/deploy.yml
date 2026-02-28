@@ -25,13 +25,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-          cache: 'npm'
-          # Fix: Points to the lockfile inside your sub-folder redesign-protfolio/package-lock.json
-          cache-dependency-path: 'redesign-protfolio/package-lock.json'
 
       - name: Install dependencies
         run: npm install

@@ -1,10 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  basePath: '/redesign-portfolio', // MUST match your repo name
+  basePath: '/redesign-portfolio', // Required for GitHub Pages subfolders
   images: {
     unoptimized: true,
   },
 };
-
 export default nextConfig;

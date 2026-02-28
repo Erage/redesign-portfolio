@@ -3,17 +3,18 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #000000;
+  --background: #1a1a1a;
+  --foreground: #ffffff;
+  --accent: #f0a25e;
 }
 
 body {
-  background: white;
-  color: black;
-  -webkit-font-smoothing: antialiased;
+  background-color: var(--background);
+  color: var(--foreground);
+  @apply antialiased;
 }
 
-/* Recreates the Palak Desai "Display" typography */
-.heading-display {
-  @apply text-[12vw] md:text-[9vw] font-black tracking-tighter leading-[0.8] mb-12;
+/* Replicate the mono-spaced, high-tech font feel */
+h1, h2, nav a {
+  @apply font-mono tracking-tight;
 }

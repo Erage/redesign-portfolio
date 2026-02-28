@@ -3,22 +3,45 @@ import { motion } from "framer-motion";
 
 export default function Home() {
   return (
-    <main className="px-8 pt-48 pb-20 max-w-7xl mx-auto">
-      <motion.section 
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-      >
-        <h1 className="heading-display">
-          Building <br /> 
-          <span className="text-slate-200">Autonomous</span> <br />
-          Systems.
-        </h1>
-        <p className="text-xl md:text-2xl text-slate-400 max-w-xl font-medium leading-relaxed">
-          Platform Architect with 10+ years of DevOps excellence. Currently 
-          securing the future of Agentic Infrastructure.
-        </p>
-      </motion.section>
-    </main>
-  );
-}
+    <main className="bg-[#1a1a1a] min-h-screen text-white px-6 pt-32 pb-20">
+      <div className="max-w-5xl mx-auto flex flex-col items-center text-center">
+        
+        {/* 1. The "Availability" Badge */}
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="flex items-center gap-2 border border-emerald-500/30 bg-emerald-500/5 px-4 py-2 rounded-full mb-12"
+        >
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+          </span>
+          <span className="text-xs font-mono text-emerald-500 uppercase tracking-widest">
+            Available for Projects
+          </span>
+        </motion.div>
+
+        {/* 2. The High-Contrast Hero Header */}
+        <motion.section 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <h1 className="text-5xl md:text-8xl font-bold tracking-tight mb-6">
+            Hi, I&apos;m <span className="text-[#f0a25e]">Your Name</span>
+          </h1>
+          
+          {/* Use font-mono for the subheadline to match Palak's site */}
+          <p className="font-mono text-lg md:text-xl text-gray-400 max-w-3xl leading-relaxed mb-12">
+            Platform Architect <span className="text-gray-600">|</span> Building Intelligent Systems with <span className="text-white">GenAI & Cloud</span>
+          </p>
+
+          {/* 3. Action Buttons */}
+          <div className="flex flex-wrap justify-center gap-4">
+            <button className="bg-[#f0a25e] hover:bg-[#e0924e] text-black font-mono font-bold px-8 py-4 rounded-xl flex items-center gap-2 transition-all">
+              View Projects <span>→</span>
+            </button>
+            <button className="border border-blue-500/50 text-blue-400 font-mono font-bold px-8 py-4 rounded-xl hover:bg-blue-500/10 transition-all">
+              Contact Me
+            </button>
+            <button className="border border-gray-700 text-gray-300 font-mono
